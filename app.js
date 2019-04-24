@@ -9,3 +9,9 @@ myApp.controller('mainController', function($scope) {
         self.resultado = self.parcela1 + self.parcela2;
     }
 });
+
+angular.module('myApp').component('calculadora', {
+    
+    templateUrl: 'calculadora.html',
+    controller: 'mainController'
+});
