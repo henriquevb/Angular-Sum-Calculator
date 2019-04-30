@@ -26,7 +26,7 @@ describe('Calculadora Angular somar as parcelas', function(){
         $controller.parcela1 = 22;
         $controller.parcela2 = -5;
         $controller.soma();
-        expect($controller.resultado).toEqual(20);
+        expect($controller.resultado).toEqual(17);
     });
       test ('-1 + (-1) should be equal 2', function(){
         $controller.parcela1 = 'ha';
