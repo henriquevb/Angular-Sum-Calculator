@@ -1,8 +1,24 @@
-var express = require(‘express’);
-var app = express();
-app.use(express.static(“calculadora_angular”)); // myApp will be the same folder name.
-app.get(‘/’, function (req, res,next) {
- res.redirect(‘/’); 
+const express = require('express');
+const app = express();
+const path = require('path');
+const router = express.Router();
+
+app.use(express.static(__dirname))
+router.get('/',function(req,res){
+  res.sendFile(path.join(__dirname+'/index.htm'));
+  //__dirname : It will resolve to your project folder.
 });
-app.listen(8080, ‘localhost’);
-console.log(“MyProject Server is Listening on port 8080”);
+
+router.get('/about',function(req,res){
+  res.sendFile(path.join(__dirname+'/about.html'));
+});
+
+router.get('/sitemap',function(req,res){
+  res.sendFile(path.join(__dirname+'/sitemap.html'));
+});
+
+//add the router
+app.use('/', router);
+app.listen(process.env.port || 3000);
+
+console.log('Running at Port 3000');
