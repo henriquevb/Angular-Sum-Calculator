@@ -1,9 +1,6 @@
 var myApp = angular.module('myApp', ['myApp']);
 myApp.controller('mainController', function($scope) {
-    var self = this;
-    self.parcela1 = 0;
-    self.parcela2 = 0;
-    self.resultado = 0;
+    var self = this;    
 });
 
 angular.module('myApp').component('calculadora', {
