@@ -1,37 +1,44 @@
-var myApp = angular.module('myApp', ['myApp']);
-myApp.controller('mainController', function($scope) {
-    var self = this;
-    self.parcela1 = 0;
-    self.parcela2 = 0;
-    self.resultado = 0;
-});
+let app = angular.module('com.henriquebv.app', [
+    'com.henriquebv.app.calculator'
+]);
+ 
+const Calculator = function() {
+    let self = this;
 
-angular.module('myApp').component('calculadora', {
-    
-    templateUrl: './calculadora.html',
-    controller: function () {
-        var calculadora = this;
-        calculadora.soma = function () {
-            console.log('----------------------------');
-            return self.resultado = self.parcela1 + self.parcela2; 
-        };
-  },
+    self.$onInit = () => {
+        console.log('Init calc!!!');
+        console.log(self.name);
+    };
+
+    self.sum = () => {
+        console.log('Called sum()!');
+        return self.resultado = self.parcela1 + self.parcela2; 
+    };
+},
+Sum = function() {
+    let self = this;
+
+    self.$onInit = () => {
+        console.log('Init sum!!!');
+    };  
+};
+
+angular.module('com.henriquebv.app.calculator',[
+    'com.henriquebv.app.button'
+]).component('calculatorComp', {
+    templateUrl: './calculator.html',
+    controller: Calculator,
     bindings: {
-        parcela1: '=',
-        parcela2:'=',
-        resultado:'='
+        name: '<'
     }
 });
 
-angular.module('myApp').component('sumButton', {
-    template: '<button ng-click="calculadora.soma()">Soma</button><br>',
-    controller: function () {
-        var controle = this;
-      },
-      bindings: {
-        soma: '&',
-        parcela1: '=',
-        parcela2:'=',
-        resultado:'='
+angular.module('com.henriquebv.app.button',[])
+.component('buttonComp', {
+    templateUrl: './button.html',
+    controller: Sum,
+    bindings: {
+        name: '<',
+        action: '&'
     }
 });
