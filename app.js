@@ -1,5 +1,5 @@
 let app = angular.module('com.henriquebv.app', [
-    'com.henriquebv.app.calculator'
+    
 ]);
  
 const Calculator = function() {
@@ -23,18 +23,14 @@ Sum = function() {
     };  
 };
 
-angular.module('com.henriquebv.app.calculator',[
-    'com.henriquebv.app.button'
+angular.module('com.henriquebv.app',[
 ]).component('calculatorComp', {
     templateUrl: './calculator.html',
     controller: Calculator,
     bindings: {
         name: '<'
     }
-});
-
-angular.module('com.henriquebv.app.button',[])
-.component('buttonComp', {
+}).component('buttonComp', {
     templateUrl: './button.html',
     controller: Sum,
     bindings: {
