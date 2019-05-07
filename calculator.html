@@ -4,6 +4,21 @@
 
 <button-comp action="$ctrl.sum()" name="'Soma'"></button-comp>
 
+<button-comp action="$ctrl.subtraction()" name="'Subtracao'"></button-comp>
+
+<button-division name="'Divisao'" 
+             parcela1="$ctrl.parcela1" 
+             parcela2="$ctrl.parcela2" 
+             resultado="$ctrl.resultado">
+</button-division>
+
+<button-multiplication name="'Multiplicacao'"
+                       parcela1="$ctrl.parcela1" 
+                       parcela2="$ctrl.parcela2" 
+                       resultado="$ctrl.resultado"
+></button-multiplication>
+
+
 parcela1: {{$ctrl.parcela1}} <br/> 
 parcela2: {{$ctrl.parcela2}} <br/>
 resultado: {{$ctrl.resultado}}
