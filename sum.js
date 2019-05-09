@@ -16,7 +16,6 @@ angular.module('com.henriquevb.sum', [])
             controller: Sum,
             bindings: {
                 name: '<',
-                action: '&',
                 parcela1: '=',
                 parcela2: '=',
                 resultado: '='

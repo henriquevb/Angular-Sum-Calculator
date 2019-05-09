@@ -14,10 +14,9 @@
     angular.module('com.henriquevb.subtraction', [])
            .component('buttonSubtraction', {
                 templateUrl: './button.html',
-                controller: Sum,
+                controller: Subtraction,
                 bindings: {
                     name: '<',
-                    action: '&',
                     parcela1: '=',
                     parcela2: '=',
                     resultado: '='
