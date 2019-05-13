@@ -2,14 +2,25 @@
 + 
 <input name="parcela2" type="number" ng-model="$ctrl.parcela2"/><br/>
 
-<button-comp action="$ctrl.sum()" name="'Soma'"></button-comp>
+<button-sum 
+            name="'Soma'"
+            parcela1="$ctrl.parcela1" 
+            parcela2="$ctrl.parcela2" 
+            resultado="$ctrl.resultado">
 
-<button-comp action="$ctrl.subtraction()" name="'Subtracao'"></button-comp>
+</button-sum>
+
+<button-subtraction 
+                    name="'Subtracao'"
+                    parcela1="$ctrl.parcela1" 
+                    parcela2="$ctrl.parcela2" 
+                    resultado="$ctrl.resultado">
+</button-subtraction>
 
 <button-division name="'Divisao'" 
-             parcela1="$ctrl.parcela1" 
-             parcela2="$ctrl.parcela2" 
-             resultado="$ctrl.resultado">
+                 parcela1="$ctrl.parcela1" 
+                 parcela2="$ctrl.parcela2" 
+                 resultado="$ctrl.resultado">
 </button-division>
 
 <button-multiplication name="'Multiplicacao'"
